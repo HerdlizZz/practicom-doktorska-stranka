@@ -3,10 +3,7 @@
   const legacyStorageKey = 'theme';
   const root = document.documentElement;
 
-  const getSystemTheme = () => {
-    if (!window.matchMedia) return 'dark';
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-  };
+  const defaultTheme = 'dark';
 
   const getStoredTheme = () => {
     try {
@@ -27,7 +24,7 @@
     if (toggle) toggle.setAttribute('aria-label', theme);
   };
 
-  setTheme(getStoredTheme() ?? getSystemTheme());
+  setTheme(getStoredTheme() ?? defaultTheme);
 
   document.addEventListener('click', (event) => {
     const button = event.target && event.target.closest ? event.target.closest('#theme-toggle') : null;
@@ -42,16 +39,6 @@
     }
   });
 
-  if (window.matchMedia) {
-    const mql = window.matchMedia('(prefers-color-scheme: light)');
-    const onChange = () => {
-      if (getStoredTheme()) return;
-      setTheme(getSystemTheme());
-    };
-
-    if (typeof mql.addEventListener === 'function') mql.addEventListener('change', onChange);
-    else if (typeof mql.addListener === 'function') mql.addListener(onChange);
-  }
 })();
 
 (function () {
