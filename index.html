@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; frame-src 'self' https://maps.google.com https://www.google.com; img-src 'self' data: https:; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; upgrade-insecure-requests" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta name="description" content="Ordinace praktického lékaře pro dospělé – Practicom s.r.o. – kontakty, ordinační hodiny, služby a aktuální informace." />
+        <title>Ordinace praktického lékaře – Practicom s.r.o.</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js" defer></script>
+    </head>
+
+    <body>
+        <a class="skip-link" href="#obsah">Přeskočit na obsah</a>
+
+        <header class="header" role="banner">
+            <div class="container header-inner">
+                <a class="brand" href="index.html" aria-label="Domů">
+                    <span class="brand-mark" aria-hidden="true">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C7.03 2 3 6.03 3 11c0 5.25 4.6 9.64 9 11 4.4-1.36 9-5.75 9-11 0-4.97-4.03-9-9-9Z" stroke="currentColor" stroke-width="1.7" opacity=".9" />
+                            <path d="M12 6v10M7 11h10" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+                        </svg>
+                    </span>
+                    <span>
+                        <h1>Ordinace praktického lékaře</h1>
+                        <p>Practicom s.r.o. • Havířov & Doubrava</p>
+                    </span>
+                </a>
+
+                <nav class="nav" aria-label="Hlavní navigace">
+                    <a href="ordinace.html">Ordinace</a>
+                    <a href="hodiny.html">Ordinační hodiny</a>
+                    <a href="sluzby.html">Služby</a>
+                    <a href="tym.html">Tým</a>
+                    <a href="zastup.html">Zastoupení</a>
+                    <a href="kontakt.html">Kontakt</a>
+                    <button class="theme-toggle" id="theme-toggle" type="button" title="Přepnout tmavý / světlý" aria-label="auto" aria-live="polite">
+                        <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                            <mask class="moon" id="moon-mask">
+                                <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                                <circle cx="24" cy="10" r="6" fill="black" />
+                            </mask>
+                            <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                            <g class="sun-beams" stroke="currentColor">
+                                <line x1="12" y1="1" x2="12" y2="3" />
+                                <line x1="12" y1="21" x2="12" y2="23" />
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                <line x1="1" y1="12" x2="3" y2="12" />
+                                <line x1="21" y1="12" x2="23" y2="12" />
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                            </g>
+                        </svg>
+                        <span class="sr-only">Přepnout motiv</span>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <main id="obsah" class="container" role="main">
+            <section class="hero" aria-label="Hlavní informace">
+                <div class="card hero-main reveal">
+                    <div class="badge-row" aria-label="Rychlé informace">
+                        <span class="badge">Objednávání a zprávy: 10–11 / 16–17</span>
+                        <span class="badge">Odběry v Havířově od 7:00</span>
+                    </div>
+
+                    <h2 class="hero-title">Vše důležité na jedné stránce</h2>
+                    <p class="hero-sub">Telefony, nejdůležitější režim volání a sváteční přehled. Detailní informace jsou na jednotlivých stránkách v menu.</p>
+
+                    <div class="cta-row" aria-label="Rychlé odkazy">
+                        <a class="btn btn-primary" href="kontakt.html">Kontakt</a>
+                        <a class="btn" href="ordinace.html">Ordinace</a>
+                        <a class="btn" href="hodiny.html">Ordinační hodiny</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section reveal" aria-label="Rychlý přehled">
+                <div class="section-head">
+                    <h2 class="title">Rychlý přehled</h2>
+                    <span class="eyebrow">Nejčastější dotazy</span>
+                </div>
+
+                <div class="quick-grid">
+                    <div class="panel pad quick-item reveal" aria-label="Telefony">
+                        <strong>Telefonní kontakty</strong>
+                        <p>
+                            Havířov: <a href="tel:+420773595504">+420 773 595 504</a><br />
+                            Doubrava: <a href="tel:+420773118560">+420 773 118 560</a>
+                        </p>
+                    </div>
+                    <div class="panel pad quick-item reveal" aria-label="Kdy volat">
+                        <strong>Kdy volat / psát zprávy</strong>
+                        <p>Objednání na čas vyšetření, zprávy pro lékaře a objednání léků:<br> <strong>10:00–11:00</strong> a <strong>16:00–17:00</strong>.</p>
+                    </div>
+                    <div class="panel pad quick-item reveal" aria-label="Zastupování">
+                        <strong>Zastupování pro Doubravu</strong>
+                        <p>V době dovolených zastupuje MUDr. Klečatský Vladimír. <br> Telefon: <a href="tel:+420596884608">+420 596 884 608</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section reveal" aria-label="Sváteční režim">
+                <div class="section-head">
+                    <h2 class="title">Sváteční režim</h2>
+                    <span class="eyebrow">Tabulka provozu při svátcích</span>
+                </div>
+
+                <div class="panel pad reveal">
+                    <table class="table" aria-label="Ordinační hodiny v době svátků">
+                        <thead>
+                            <tr>
+                                <th scope="col">Havířov</th>
+                                <th scope="col">Doubrava</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>22.12.2025 • 7:00 – 12:00</td>
+                                <td>18.12.2025 • poslední ordinace před svátky</td>
+                            </tr>
+                            <tr>
+                                <td>29.12.2025 • 7:00 – 12:00</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>30.12.2025 • 13:00 – 15:00</td>
+                                <td>30.12.2025 • 7:00 – 10:30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="cta-row" style="margin-top:12px">
+                        <a class="btn" href="hodiny.html">Zobrazit detail hodin</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer" role="contentinfo">
+            <div class="container footer-grid">
+                <div class="footer-mini">
+                    <div class="footer-title">Practicom s.r.o.</div>
+                    <p>Ordinace praktického lékaře pro dospělé</p>
+                </div>
+
+                <div class="footer-mini">
+                    <div class="footer-title">Kontakt</div>
+                    <ul class="footer-list">
+                        <li>Havířov: <a href="tel:+420773595504">+420 773 595 504</a></li>
+                        <li>Doubrava: <a href="tel:+420773118560">+420 773 118 560</a></li>
+                        <li>Zástup: <a href="tel:+420596884608">+420 596 884 608</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-mini">
+                    <div class="footer-title">Adresy</div>
+                    <ul class="footer-list">
+                        <li>Havířov: Nákupní 1/426</li>
+                        <li>Doubrava: dům č. 444</li>
+                        <li>IČO: 26838559</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container footer-bottom">
+                <small>© 2015 Practicom s.r.o. All Rights Reserved.</small>
+                <small><a href="kontakt.html">Kontakt & mapa</a></small>
+            </div>
+        </footer>
+    </body>
+</html>

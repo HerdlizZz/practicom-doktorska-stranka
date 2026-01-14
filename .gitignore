@@ -1,0 +1,17 @@
+# OS junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+
+# Logs
+*.log
+
+# Dependency folders (not used here, but safe)
+node_modules/
+
+# Build outputs (if added later)
+dist/
+build/
