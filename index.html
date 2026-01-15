@@ -171,5 +171,44 @@
                 <small><a href="kontakt.html">Kontakt & mapa</a></small>
             </div>
         </footer>
+
+        <div class="chatbot" data-chatbot>
+            <button class="chatbot-fab" type="button" aria-label="Otevřít chat asistenta" aria-controls="chatbot-panel" aria-expanded="false">
+                <svg class="chatbot-fab-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M4 6.8A3.8 3.8 0 0 1 7.8 3h8.4A3.8 3.8 0 0 1 20 6.8v6.2A3.8 3.8 0 0 1 16.2 16H11l-4.2 3.1c-.5.4-1.2 0-1.2-.6V16A3.8 3.8 0 0 1 4 13V6.8Z" stroke="currentColor" stroke-width="1.7" opacity=".9" />
+                    <path d="M8 8.6h8M8 11.4h5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+                </svg>
+                <span class="sr-only">Chat</span>
+            </button>
+
+            <section class="chatbot-panel" id="chatbot-panel" role="dialog" aria-label="Chat asistent" aria-modal="false" hidden>
+                <header class="chatbot-header">
+                    <div>
+                        <div class="chatbot-title">Asistent Practicom</div>
+                        <div class="chatbot-subtitle">Rychlé informace</div>
+                    </div>
+                    <button class="chatbot-close" type="button" aria-label="Zavřít chat">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </header>
+
+                <div class="chatbot-body">
+                    <div class="chatbot-messages" aria-live="polite" aria-relevant="additions"></div>
+                    <div class="chatbot-quick" aria-label="Rychlé otázky">
+                        <button type="button" class="chatbot-chip" data-chatbot-q="adresa">Adresa</button>
+                        <button type="button" class="chatbot-chip" data-chatbot-q="kontakt">Kontakt</button>
+                        <button type="button" class="chatbot-chip" data-chatbot-q="hodiny">Ordinační hodiny</button>
+                        <button type="button" class="chatbot-chip" data-chatbot-q="sluzby">Služby</button>
+                        <button type="button" class="chatbot-chip" data-chatbot-q="zastup">Zastupování</button>
+                    </div>
+                </div>
+
+                <form class="chatbot-input" autocomplete="off" novalidate>
+                    <label class="sr-only" for="chatbot-text">Napište dotaz</label>
+                    <input id="chatbot-text" name="q" type="text" inputmode="text" placeholder="Napište: adresa, kontakt, hodiny…" />
+                    <button class="chatbot-send" type="submit">Odeslat</button>
+                </form>
+            </section>
+        </div>
     </body>
 </html>
