@@ -3,17 +3,29 @@
   const legacyStorageKey = 'theme';
   const root = document.documentElement;
 
-  const defaultTheme = 'dark';
+  const defaultTheme = 'light';
 
   const getStoredTheme = () => {
     try {
-      const direct = localStorage.getItem(storageKey);
+      // Keep the choice only within the current tab/session
+      const direct = sessionStorage.getItem(storageKey);
       if (direct === 'light' || direct === 'dark') return direct;
 
-      const legacy = localStorage.getItem(legacyStorageKey);
+      const legacy = sessionStorage.getItem(legacyStorageKey);
       return legacy === 'light' || legacy === 'dark' ? legacy : null;
     } catch {
       return null;
+    }
+  };
+
+  const clearStoredTheme = () => {
+    // Cleanup from older behavior (localStorage). We intentionally keep
+    // sessionStorage so the theme survives F5 reloads in the same tab.
+    try {
+      localStorage.removeItem(storageKey);
+      localStorage.removeItem(legacyStorageKey);
+    } catch {
+      // ignore
     }
   };
 
@@ -24,6 +36,9 @@
     if (toggle) toggle.setAttribute('aria-label', theme);
   };
 
+  // Default is light. Keep user's choice while navigating between pages and on F5.
+  // Do not persist across a fresh browser/tab session.
+  clearStoredTheme();
   setTheme(getStoredTheme() ?? defaultTheme);
 
   document.addEventListener('click', (event) => {
@@ -33,7 +48,8 @@
     const next = root.dataset.theme === 'light' ? 'dark' : 'light';
     setTheme(next);
     try {
-      localStorage.setItem(storageKey, next);
+      sessionStorage.setItem(storageKey, next);
+      sessionStorage.setItem(legacyStorageKey, next);
     } catch {
       // ignore
     }
